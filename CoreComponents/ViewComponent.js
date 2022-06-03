@@ -6,16 +6,18 @@ It compiles to "<ViewGroup> </ViewGroup>" in android and "<UIView> </UIView>"" i
 "View component" can be nested 
 */
 
+import React from 'react';
 import { View, Text } from 'react-native';
+import css from '../css/css'
 
 const MyViewComponent = () => {
     return(
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <h2>View Component</h2>
-            <Text style={{fontSize: 30}}>
-                This is a View component
-            </Text>
-        </View>
+          <Text style={css.h1}>View Component</Text>
+          <Text style={{fontSize: 30}}>
+              This is a View component
+          </Text>
+      </View>
     )
 }
 

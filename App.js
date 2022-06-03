@@ -1,12 +1,12 @@
 import { View, StyleSheet, Dimensions } from 'react-native';
 
-import MyViewComponent from './components/1_core_component/ViewComponent';
-import MyTextComponent from './components/1_core_component/TextComponent';
-import MyTextInput from './components/1_core_component/TextInputComponent';
-import MyScrollView from './components/1_core_component/ScrollViewComponent';
-import MyButtonComponent from './components/1_core_component/ButtonComponent';
-import MyImageComponent from './components/1_core_component/ImageComponent'
-import LoginPage from './components/1_core_component/LoginPage';
+import MyViewComponent from './CoreComponents/ViewComponent';
+import MyTextComponent from './CoreComponents/TextComponent';
+import MyTextInput from './CoreComponents/TextInputComponent';
+import MyScrollView from './CoreComponents/ScrollViewComponent';
+import MyButtonComponent from './CoreComponents/ButtonComponent';
+import MyImageComponent from './CoreComponents/ImageComponent'
+import LoginPage from './CoreComponents/LoginPage';
 
 
 export default function App() {
@@ -16,9 +16,9 @@ export default function App() {
       {/* <MyTextComponent /> */}
       {/* <MyTextInput /> */}
       {/* <MyScrollView /> */}
-      {/* <MyButtonComponent></MyButtonComponent> */}
-      {/* <MyImageComponent></MyImageComponent> */}
-      <LoginPage />
+      <MyButtonComponent />
+      {/* <MyImageComponent /> */}
+      {/* <LoginPage /> */}
     </View>
   );
 }
