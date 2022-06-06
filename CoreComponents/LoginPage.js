@@ -1,64 +1,75 @@
 import * as React from 'react'
-import { View, Text, TextInput, Image, Button } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 import css from '../css/css'
 
 const LoginPage = () =>{
 
-    const resultRef = React.useRef()
-    const emailRef = React.useRef()
-    const passRef = React.useRef()
-
+    const [id, setId] = React.useState(123)
+    const [pass, setPass] = React.useState()
     const [result, setResult] = React.useState()
 
+    const [focus, setFocus] = React.useState(false);
+
     const submitData = () => {
-        setResult(`${emailRef.current.value} - ${passRef.current.value}`)
+        setResult(id+ " - " +pass)
+        console.log(id)
     }
 
-
     return(
-        <View style={{width: '100%'}}>
+        <View style={{width: "100%"}}>
           <Text style={css.h1}>Login page</Text>
-          <View style={{flex: 1, width: '100%'}}>
-              <View style={{padding: 5, justifyContent: 'center'}}>
-                  <Text 
-                      style={{fontSize: 16}}
-                  >User id or e-mail id:</Text>
+          <View>
+              <View>
+                  <Text style={styles.label}>
+                      User id (number only):
+                    </Text>
               </View>
-              <View style={{padding: 5, justifyContent: 'center'}}>
+              <View>
                   <TextInput 
-                      ref = {emailRef}
-                      placeholder="User id or e-mail id..."
-                      style={{backgroundColor: 'white', padding: 5, fontSize: 16}}
+                      onChangeText={id=>setId(id)}
+                      placeholder="User id..."
+                      defaultValue="123"
+                      keyboardType="numeric"
+                      //style={styles.input}
+                      style={focus ? StyleSheet.compose(styles.input, styles.inputOnFocus) : StyleSheet.compose(styles.input, styles.inputOnBlur)}
+                      onFocus={() => setFocus(true)}
+                      onBlur={() => setFocus(false)}
                     />
               </View>
           </View>
-          <View style={{flex: 1, width: '100%'}}>
-              <View style={{padding: 5, justifyContent: 'center'}}>
-                  <Text 
-                      style={{fontSize: 16}}
-                  >Password:</Text>
+          <View>
+              <View>
+                  <Text style={styles.label}>
+                      Password:
+                    </Text>
               </View>
-              <View style={{padding: 5, justifyContent: 'center'}}>
+              <View>
                   <TextInput 
-                      ref = {passRef}
+                      onChangeText={pass=>setPass(pass)}
                       placeholder="Password..."
                       secureTextEntry = {true}
-                      style={{backgroundColor: 'white', padding: 5, fontSize: 16}}
+                      style={styles.input}
                     />
               </View>
           </View>
           <View style={{marginTop: 10}}>
-              <Button 
+              {/* <Button 
                   title="Submit" 
                   onPress = { submitData }
-                  />
+                  style={{fontSize: 555}}
+                /> */}
+            <TouchableOpacity 
+                onPress = { submitData }
+                style={styles.button}
+            >
+                <Text style={{fontSize: 25, color: 'white'}}>TouchableOpacity Button</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={{marginTop: 20}}>
               <Text style={{color: 'blue'}}>You typed</Text>
               <Text 
-                  ref = {resultRef}
-                  style={{fontSize: 20, padding: 5, color: 'gray', fontWeight: 'bold'}}>
+                  style={{fontSize: 20, padding: 5, color: 'gray', fontWeight: 'bold', padding: 10}}>
                       { result }
               </Text>
           </View>
@@ -67,3 +78,33 @@ const LoginPage = () =>{
 }
 
 export default LoginPage;
+
+
+const styles = StyleSheet.create({
+    input: {
+        paddingStart: 10,
+        paddingTop: 5,
+        paddingEnd: 10,
+        paddingBottom: 7,
+        backgroundColor: 'white',
+        fontSize: 20
+    },
+    inputOnFocus: { 
+        color: 'red' 
+    },
+    inputOnBlur: { 
+        color: 'gray' 
+    },
+    label: {
+        fontSize: 20,
+        marginTop: 5,
+        marginBottom: 5
+    },
+    button: {
+        alignItems: "center",
+        backgroundColor: "red",
+        padding: 10,
+        marginTop: 5,
+        marginBottom: 5
+    }
+})

@@ -4,9 +4,17 @@ It is similar to "<p> </p>" in HTML, used to hold textual values
 It compiles to "<TextView> </TextView>" in android and "<UITextView> </UITextView>"" in ios
 "Text component" can be nested
 */
+/*
+npm i react-native-vector-icons --save
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+...
+export default () => <Icon name="rocket" size={80} color="#bf1313" />;
+*/
 
 import React from 'react';
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import css from '../css/css'
 
 const MyTextInput = () => {
@@ -25,6 +33,12 @@ const MyTextInput = () => {
                   selection='yellow'
                   style={{ padding: 5, backgroundColor: 'white', flex: 1, marginStart: 10, fontSize: 20, borderRadius: 5, color: 'red'}}
               />
+          </View>
+          <View>
+              <Text>
+                  <Icon name="user" size={10} color='gray' />
+                  <TextInput placeholder="user name" />
+              </Text>
           </View>
       </View>
     )

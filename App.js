@@ -13,16 +13,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <MyViewComponent /> */}
-      {/* <MyTextComponent /> */}
+      <MyTextComponent />
       {/* <MyTextInput /> */}
       {/* <MyScrollView /> */}
-      <MyButtonComponent />
+      {/* <MyButtonComponent /> */}
       {/* <MyImageComponent /> */}
       {/* <LoginPage /> */}
     </View>
   );
 }
-
 
 
 
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'lightblue',
     width: '100%',
-    height: Dimensions.get('window').height
+    //height: Dimensions.get('window').height
     //height: '100vh'
   }
 })
