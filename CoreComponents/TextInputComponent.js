@@ -4,8 +4,9 @@ It is similar to "<p> </p>" in HTML, used to hold textual values
 It compiles to "<TextView> </TextView>" in android and "<UITextView> </UITextView>"" in ios
 "Text component" can be nested
 */
+import React from 'react';
+import { View, Text, TextInput } from 'react-native';
 
-import { View, Text, TextInput } from 'react-native'
 const MyTextInput = () => {
     return(
         <View style={{flex: 1, height: '100vh', justifyContent: 'center', alignItems: 'center'}}>

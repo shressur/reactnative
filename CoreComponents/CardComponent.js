@@ -1,4 +1,5 @@
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 
 const CardComponent = ({card_title, card_subtitle, card_body, card_footer}) => {
     return(

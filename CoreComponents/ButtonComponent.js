@@ -4,8 +4,8 @@
 "Button component" is has very limited suppport for styling
 */
 
-import { View, Text, Button } from 'react-native';
 import React, { useState } from 'react';
+import { View, Text, Button } from 'react-native';
 import css from '../css/css'
 
 const MyButtonComponent = () => {

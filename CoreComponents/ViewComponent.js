@@ -5,6 +5,9 @@ There can only be one parent View coponent and all other componnents must go ins
 It compiles to "<ViewGroup> </ViewGroup>" in android and "<UIView> </UIView>"" in ios
 "View component" can be nested 
 */
+/*
+react must be imported to write JSX
+*/
 
 import React from 'react';
 import { View, Text } from 'react-native';
